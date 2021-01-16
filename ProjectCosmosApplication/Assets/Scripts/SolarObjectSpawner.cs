@@ -12,9 +12,12 @@ public class SolarObjectSpawner : MonoBehaviour
     {
         foreach (GameObject planet in planets) {
             DrawCircle orbitDistance = planet.GetComponent<DrawCircle>();
-            GameObject newPlanet = Instantiate(planet, new Vector3(0, 0, orbitDistance.radius), Quaternion.identity);
+            Vector3 sunPos = sun.transform.position;
+            sunPos.z += orbitDistance.orbitRadius;
+            GameObject newPlanet = Instantiate(planet, sunPos, Quaternion.identity);
             newPlanet.transform.RotateAround(sun.transform.position, Vector3.up, RandFloat());
             newPlanet.GetComponent<Orbit>().target = sun;
+            newPlanet.GetComponent<DrawCircle>().orbitTarget = sun.transform;
         }        
     }
 

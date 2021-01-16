@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class DrawCircle : MonoBehaviour
 {
-    public int radius;
+    public int orbitRadius;
     public float lineWidth;
     public Material lineMat;
+    public Transform orbitTarget;
 
     // Start is called before the first frame update
     void Start()
     {
         var go1 = new GameObject { name = "Circle" };
-        go1.DrawCircle(radius, lineWidth, lineMat);
+        go1.DrawCircle(orbitRadius, lineWidth, lineMat);
+        go1.transform.position = orbitTarget.position;
     }
 
     // Update is called once per frame
