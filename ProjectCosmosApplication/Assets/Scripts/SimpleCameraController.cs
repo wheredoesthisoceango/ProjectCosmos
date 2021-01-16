@@ -71,6 +71,9 @@ namespace UnityTemplateProjects
         [Tooltip("Time it takes to interpolate camera rotation 99% of the way to the target."), Range(0.001f, 1f)]
         public float rotationLerpTime = 0.01f;
 
+        [Tooltip("Rotation speed multiplier.")]
+        public int rotationSpeed = 20;
+
         [Tooltip("Whether or not to invert our Y axis for mouse input to rotation.")]
         public bool invertY = false;
 
@@ -187,7 +190,7 @@ namespace UnityTemplateProjects
             // Rotation
             if (IsCameraRotationAllowed())
             {
-                var mouseMovement = GetInputLookRotation() * Time.deltaTime * 5;
+                var mouseMovement = GetInputLookRotation() * Time.deltaTime * rotationSpeed;
                 if (invertY)
                     mouseMovement.y = -mouseMovement.y;
                 
@@ -195,6 +198,7 @@ namespace UnityTemplateProjects
 
                 m_TargetCameraState.yaw += mouseMovement.x * mouseSensitivityFactor;
                 m_TargetCameraState.pitch += mouseMovement.y * mouseSensitivityFactor;
+                m_TargetCameraState.pitch = Mathf.Clamp(m_TargetCameraState.pitch, -30, 45);
             }
             
             // Translation
