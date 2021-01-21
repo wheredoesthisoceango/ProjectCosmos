@@ -1,0 +1,1122 @@
+Using pre-set license
+Built from '2020.2/release' branch; Version is '2020.2.1f1 (270dd8c3da1c) revision 2559448'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10  (10.0.0) 64bit' Language: 'en' Physical Memory: 16299 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\2020.2.1f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/mirro/Documents/GitHub/ProjectCosmos/ProjectCosmosApplication
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+50704
+Successfully changed project path to: C:/Users/mirro/Documents/GitHub/ProjectCosmos/ProjectCosmosApplication
+C:/Users/mirro/Documents/GitHub/ProjectCosmos/ProjectCosmosApplication
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 41.25 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.2.1f1 (270dd8c3da1c)
+[Subsystems] Discovering subsystems at path C:/Program Files/2020.2.1f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/mirro/Documents/GitHub/ProjectCosmos/ProjectCosmosApplication/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 2080 Ti (ID=0x1e07)
+    Vendor:   
+    VRAM:     11049 MB
+    Driver:   27.21.14.6109
+Initialize mono
+Mono path[0] = 'C:/Program Files/2020.2.1f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/2020.2.1f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56764
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/2020.2.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: C:/Program Files/2020.2.1f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
+Registered in 0.001808 seconds.
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 48.07 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.622 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.001425 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019E6CBA3D70 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E6CBB4380 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7130F020 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E71397230 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7150F020 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E714E8A30 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 49.53 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.859 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.37 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2414 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 113.8 MB.
+System memory in use after: 111.8 MB.
+
+Unloading 44 unused Assets to reduce memory usage. Loaded Objects now: 2823.
+Total: 2.718900 ms (FindLiveObjects: 0.214800 ms CreateObjectMapping: 0.112800 ms MarkObjects: 1.378500 ms  DeleteObjects: 1.011600 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/TutorialInfo/Scripts/Readme.cs
+  artifactKey: Guid(fcf7219bab7fe46a1ad266029b2fee19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TutorialInfo/Scripts/Readme.cs using Guid(fcf7219bab7fe46a1ad266029b2fee19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b2e9631a00ede3d4b09244e22b5672e') in 0.028524 seconds
+  Import took 0.032752 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000219 seconds.
+  path: Assets/TutorialInfo/Scripts/ReadmeStarSparrow.cs
+  artifactKey: Guid(0d21cda6415268b478f9e64202f107fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TutorialInfo/Scripts/ReadmeStarSparrow.cs using Guid(0d21cda6415268b478f9e64202f107fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '730bb10e9a6f6e34ed5bebf8b190274f') in 0.005560 seconds
+  Import took 0.008766 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.889029 seconds.
+  path: Assets/TutorialInfo/Scripts/Editor/ReadmeStarSparrowEditor.cs
+  artifactKey: Guid(56b3964d2acb6074b9c11ef1e954f974) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TutorialInfo/Scripts/Editor/ReadmeStarSparrowEditor.cs using Guid(56b3964d2acb6074b9c11ef1e954f974) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df379f50ba3779ccf7d0f3f4eb9bccfe') in 0.005224 seconds
+  Import took 0.008162 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.019036 seconds.
+  path: Assets/TutorialInfo/Scripts/Editor/ReadmeStarSparrowEditor.cs
+  artifactKey: Guid(56b3964d2acb6074b9c11ef1e954f974) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TutorialInfo/Scripts/Editor/ReadmeStarSparrowEditor.cs using Guid(56b3964d2acb6074b9c11ef1e954f974) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df379f50ba3779ccf7d0f3f4eb9bccfe') in 0.002294 seconds
+  Import took 0.006192 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001202 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019E6D131010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E72544010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7173A020 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E6CCB9B90 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E6C943020 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E6CCB9B90 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.36 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.731 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.36 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2336 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 111.5 MB.
+System memory in use after: 109.6 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2824.
+Total: 3.286500 ms (FindLiveObjects: 0.217400 ms CreateObjectMapping: 0.086300 ms MarkObjects: 1.503400 ms  DeleteObjects: 1.478400 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.983216 seconds.
+  path: Assets/TutorialInfo/Layout.wlt
+  artifactKey: Guid(eabc9546105bf4accac1fd62a63e88e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TutorialInfo/Layout.wlt using Guid(eabc9546105bf4accac1fd62a63e88e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f15ad65e5c2b14ae8f633b3610734401') in 0.018621 seconds
+  Import took 0.021979 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.114328 seconds.
+  path: Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs
+  artifactKey: Guid(476cc7d7cd9874016adc216baab94a0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs using Guid(476cc7d7cd9874016adc216baab94a0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89882dab783f25cea4d4f21d48f319c1') in 0.005775 seconds
+  Import took 0.008915 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.022280 seconds.
+  path: Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs
+  artifactKey: Guid(476cc7d7cd9874016adc216baab94a0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs using Guid(476cc7d7cd9874016adc216baab94a0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89882dab783f25cea4d4f21d48f319c1') in 0.001965 seconds
+  Import took 0.005069 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1628.735645 seconds.
+  path: Assets/Scripts/ShipFleet/Ship/ShipComponent.cs
+  artifactKey: Guid(b22d1bee499638044941132919b8a3d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ShipFleet/Ship/ShipComponent.cs using Guid(b22d1bee499638044941132919b8a3d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82443b0252efe2c04f943c601c2e3cb2') in 0.006987 seconds
+  Import took 0.010588 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001532 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019E72C44010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E785D4040 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E73940EE0 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E6C87A2F0 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E6C84B010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E6CCD2BC0 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.40 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.868 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.36 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2336 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 111.6 MB.
+System memory in use after: 109.6 MB.
+
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 2826.
+Total: 3.513000 ms (FindLiveObjects: 0.369800 ms CreateObjectMapping: 0.141600 ms MarkObjects: 1.722500 ms  DeleteObjects: 1.277800 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 257.335420 seconds.
+  path: Assets/Scripts/ShipFleet/Fleet/FleetUnit.cs
+  artifactKey: Guid(a7361908b79f8c1409eebfd87498e231) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ShipFleet/Fleet/FleetUnit.cs using Guid(a7361908b79f8c1409eebfd87498e231) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34f1783f6e7b5fab9adcc62ce8e5558c') in 0.007443 seconds
+  Import took 0.010530 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001179 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019E6C9AB010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E6D302010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E79163EA0 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E6CAE9010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7B89A020 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E74212F90 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.36 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.727 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.37 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2336 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 111.6 MB.
+System memory in use after: 109.6 MB.
+
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 2828.
+Total: 2.983700 ms (FindLiveObjects: 0.223800 ms CreateObjectMapping: 0.107500 ms MarkObjects: 1.561300 ms  DeleteObjects: 1.090100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 122.911765 seconds.
+  path: Assets/Scripts/ShipFleet/Fleet/FleetUnit.cs
+  artifactKey: Guid(a7361908b79f8c1409eebfd87498e231) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ShipFleet/Fleet/FleetUnit.cs using Guid(a7361908b79f8c1409eebfd87498e231) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a381538b3ac0a9b7e720175727f3fdd') in 0.004278 seconds
+  Import took 0.007601 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 19.331993 seconds.
+  path: Assets/Scripts/ShipFleet/Ship/ArmorComponent.cs
+  artifactKey: Guid(6cf09e57a3ca5bb46b75461aa5f7448e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ShipFleet/Ship/ArmorComponent.cs using Guid(6cf09e57a3ca5bb46b75461aa5f7448e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d61a456c02638b053437eead9bc688f') in 0.007928 seconds
+  Import took 0.011263 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001562 seconds.
+  path: Assets/Scripts/ShipFleet/Ship/ArmorComponent.cs
+  artifactKey: Guid(6cf09e57a3ca5bb46b75461aa5f7448e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ShipFleet/Ship/ArmorComponent.cs using Guid(6cf09e57a3ca5bb46b75461aa5f7448e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d61a456c02638b053437eead9bc688f') in 0.002912 seconds
+  Import took 0.005975 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001163 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019E7ABEA020 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7903D020 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7BC67E60 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E6CAE9010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7A7C1930 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E78860870 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.35 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.717 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.36 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2337 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 111.7 MB.
+System memory in use after: 109.7 MB.
+
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 2831.
+Total: 4.163500 ms (FindLiveObjects: 0.337200 ms CreateObjectMapping: 0.114900 ms MarkObjects: 1.897500 ms  DeleteObjects: 1.812700 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001175 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019E71B30010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E782C7010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E779B8EF0 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E78421020 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E78B44010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E72F6EED0 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.66 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.861 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.35 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2337 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 111.5 MB.
+System memory in use after: 109.6 MB.
+
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 2833.
+Total: 2.661000 ms (FindLiveObjects: 0.198100 ms CreateObjectMapping: 0.091000 ms MarkObjects: 1.329300 ms  DeleteObjects: 1.041800 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 18.203581 seconds.
+  path: Assets/Scripts/ShipFleet/Ship/ArmorComponent.cs
+  artifactKey: Guid(6cf09e57a3ca5bb46b75461aa5f7448e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ShipFleet/Ship/ArmorComponent.cs using Guid(6cf09e57a3ca5bb46b75461aa5f7448e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b4faf7a7d8ca99c328682ccbf8b3da0') in 0.004334 seconds
+  Import took 0.007390 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 27.224801 seconds.
+  path: Assets/Scripts/ShipFleet/Ship/WeaponsComponent.cs
+  artifactKey: Guid(a2b7bf1da26bf0749bd8f46f5ccaa4a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ShipFleet/Ship/WeaponsComponent.cs using Guid(a2b7bf1da26bf0749bd8f46f5ccaa4a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6e99bb07d3c80c95873bd5d98b3e978') in 0.007515 seconds
+  Import took 0.011842 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001041 seconds.
+  path: Assets/Scripts/ShipFleet/Ship/WeaponsComponent.cs
+  artifactKey: Guid(a2b7bf1da26bf0749bd8f46f5ccaa4a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ShipFleet/Ship/WeaponsComponent.cs using Guid(a2b7bf1da26bf0749bd8f46f5ccaa4a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6e99bb07d3c80c95873bd5d98b3e978') in 0.002307 seconds
+  Import took 0.005384 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001295 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019E78D10010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E77EB7020 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E72EE66A0 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7BE4C020 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E78B78140 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E72F6EED0 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.37 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.696 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.38 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2338 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 111.7 MB.
+System memory in use after: 109.7 MB.
+
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 2836.
+Total: 3.308700 ms (FindLiveObjects: 0.205800 ms CreateObjectMapping: 0.106500 ms MarkObjects: 1.579500 ms  DeleteObjects: 1.415900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.176768 seconds.
+  path: Assets/Scripts/ShipFleet/Ship/SensorComponent.cs
+  artifactKey: Guid(2d06249733677bc418dc693297096488) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ShipFleet/Ship/SensorComponent.cs using Guid(2d06249733677bc418dc693297096488) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7579dfc3568a334667d347c9de7f9874') in 0.008913 seconds
+  Import took 0.012782 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000980 seconds.
+  path: Assets/Scripts/ShipFleet/Ship/SensorComponent.cs
+  artifactKey: Guid(2d06249733677bc418dc693297096488) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ShipFleet/Ship/SensorComponent.cs using Guid(2d06249733677bc418dc693297096488) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7579dfc3568a334667d347c9de7f9874') in 0.002922 seconds
+  Import took 0.007658 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.720810 seconds.
+  path: Assets/Scripts/ShipFleet/Ship/ShipUnit.cs
+  artifactKey: Guid(0efa09c32bd072a448a17a3ce5f3fcd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ShipFleet/Ship/ShipUnit.cs using Guid(0efa09c32bd072a448a17a3ce5f3fcd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '832d43c8526807646bae7e66676a3685') in 0.007058 seconds
+  Import took 0.010091 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001161 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019E71ACC010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7A571010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7BC67E60 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7A09B030 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E71277430 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E6CCB9B90 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.35 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.715 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.35 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2339 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 111.7 MB.
+System memory in use after: 109.7 MB.
+
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 2839.
+Total: 3.429900 ms (FindLiveObjects: 0.206900 ms CreateObjectMapping: 0.109300 ms MarkObjects: 1.578700 ms  DeleteObjects: 1.534200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.374026 seconds.
+  path: Assets/Scripts/ShipFleet/Ship/WeaponComponent.cs
+  artifactKey: Guid(a2b7bf1da26bf0749bd8f46f5ccaa4a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ShipFleet/Ship/WeaponComponent.cs using Guid(a2b7bf1da26bf0749bd8f46f5ccaa4a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '029242908ab64dc639418c1e9540a471') in 0.008318 seconds
+  Import took 0.011561 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001203 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019E7B2F6030 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7D053010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E794E3F90 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E78871FE0 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7ABD2010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E793D7010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.35 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.703 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.36 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2339 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 111.7 MB.
+System memory in use after: 109.7 MB.
+
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 2841.
+Total: 2.918100 ms (FindLiveObjects: 0.208800 ms CreateObjectMapping: 0.098000 ms MarkObjects: 1.488900 ms  DeleteObjects: 1.121700 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001225 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019E78D10010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7E5A7010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E779B8EF0 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E737B6020 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E6CEAE030 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7392B010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.37 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.718 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.35 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2339 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 111.7 MB.
+System memory in use after: 109.8 MB.
+
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 2843.
+Total: 2.690900 ms (FindLiveObjects: 0.197700 ms CreateObjectMapping: 0.089000 ms MarkObjects: 1.336600 ms  DeleteObjects: 1.066900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.590592 seconds.
+  path: Assets/Scripts/ShipFleet/Ship/WeaponComponent.cs
+  artifactKey: Guid(a2b7bf1da26bf0749bd8f46f5ccaa4a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ShipFleet/Ship/WeaponComponent.cs using Guid(a2b7bf1da26bf0749bd8f46f5ccaa4a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73f522c4ea8cf2d868bd24f29e7f5c42') in 0.004251 seconds
+  Import took 0.007235 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.420607 seconds.
+  path: Assets/Scripts/ShipFleet/Ship/EngineComponent.cs
+  artifactKey: Guid(953d3852108644149928c9685b379436) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ShipFleet/Ship/EngineComponent.cs using Guid(953d3852108644149928c9685b379436) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4611268f6518248dfcd6eaff0232f03') in 0.007201 seconds
+  Import took 0.010868 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001110 seconds.
+  path: Assets/Scripts/ShipFleet/Ship/EngineComponent.cs
+  artifactKey: Guid(953d3852108644149928c9685b379436) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ShipFleet/Ship/EngineComponent.cs using Guid(953d3852108644149928c9685b379436) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4611268f6518248dfcd6eaff0232f03') in 0.002880 seconds
+  Import took 0.007919 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001132 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019E78D10010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E78E7B0B0 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7178E020 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E6D071020 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E6CEAE030 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E71E00010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.36 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.706 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.35 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2340 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 111.6 MB.
+System memory in use after: 109.7 MB.
+
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 2846.
+Total: 3.723700 ms (FindLiveObjects: 0.475300 ms CreateObjectMapping: 0.108400 ms MarkObjects: 1.728800 ms  DeleteObjects: 1.410500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 53.838506 seconds.
+  path: Assets/Scripts/ShipFleet/Ship/PowerCoreComponent.cs
+  artifactKey: Guid(2125a0728b0a7114fac104a9f28085d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ShipFleet/Ship/PowerCoreComponent.cs using Guid(2125a0728b0a7114fac104a9f28085d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '083cdc7d083800d64a37bfce45fbef39') in 0.009642 seconds
+  Import took 0.013221 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001369 seconds.
+  path: Assets/Scripts/ShipFleet/Ship/PowerCoreComponent.cs
+  artifactKey: Guid(2125a0728b0a7114fac104a9f28085d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ShipFleet/Ship/PowerCoreComponent.cs using Guid(2125a0728b0a7114fac104a9f28085d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '083cdc7d083800d64a37bfce45fbef39') in 0.002234 seconds
+  Import took 0.005240 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001153 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019E7908B610 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E77F9FEA0 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E78EDFF00 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7BDA5010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E71277430 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E6CCB9B90 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.35 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.716 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.36 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2341 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 111.8 MB.
+System memory in use after: 109.8 MB.
+
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 2849.
+Total: 2.689300 ms (FindLiveObjects: 0.188000 ms CreateObjectMapping: 0.092400 ms MarkObjects: 1.328700 ms  DeleteObjects: 1.079500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.526302 seconds.
+  path: Assets/Scripts/ShipFleet/Ship/DComputeComponent.cs
+  artifactKey: Guid(4bc2b8cd381b08b41bf2e570e41c6d3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ShipFleet/Ship/DComputeComponent.cs using Guid(4bc2b8cd381b08b41bf2e570e41c6d3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e78e8ee24dcf00d201ef1ce1c652080a') in 0.010124 seconds
+  Import took 0.014004 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000508 seconds.
+  path: Assets/Scripts/ShipFleet/Ship/DComputeComponent.cs
+  artifactKey: Guid(4bc2b8cd381b08b41bf2e570e41c6d3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ShipFleet/Ship/DComputeComponent.cs using Guid(4bc2b8cd381b08b41bf2e570e41c6d3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e78e8ee24dcf00d201ef1ce1c652080a') in 0.002403 seconds
+  Import took 0.005751 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001157 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019E7908B610 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E77F9FEA0 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E79651AF0 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7BDA5010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E71277430 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E79152830 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.36 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.694 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.36 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2342 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 111.8 MB.
+System memory in use after: 109.8 MB.
+
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 2852.
+Total: 3.114400 ms (FindLiveObjects: 0.287400 ms CreateObjectMapping: 0.119200 ms MarkObjects: 1.573800 ms  DeleteObjects: 1.132800 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.822418 seconds.
+  path: Assets/Scripts/ShipFleet/Ship/CComputeComponent.cs
+  artifactKey: Guid(5ecf6e2644f2d2d4a8d3756d8bcedd5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ShipFleet/Ship/CComputeComponent.cs using Guid(5ecf6e2644f2d2d4a8d3756d8bcedd5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7afebd9cc8e750801e71b632dc917590') in 0.008694 seconds
+  Import took 0.012217 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001144 seconds.
+  path: Assets/Scripts/ShipFleet/Ship/CComputeComponent.cs
+  artifactKey: Guid(5ecf6e2644f2d2d4a8d3756d8bcedd5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ShipFleet/Ship/CComputeComponent.cs using Guid(5ecf6e2644f2d2d4a8d3756d8bcedd5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7afebd9cc8e750801e71b632dc917590') in 0.002575 seconds
+  Import took 0.005749 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001169 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019E74220040 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E782C7010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7E13DED0 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7DED6020 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E71373030 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E79583010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.35 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.717 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.35 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2343 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 111.9 MB.
+System memory in use after: 109.9 MB.
+
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 2855.
+Total: 2.774000 ms (FindLiveObjects: 0.189300 ms CreateObjectMapping: 0.088700 ms MarkObjects: 1.365100 ms  DeleteObjects: 1.130300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 28.177079 seconds.
+  path: Assets/Scripts/ShipFleet/Ship/Components
+  artifactKey: Guid(cee19906bdc4c024ea5e8bb54b1f4dbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ShipFleet/Ship/Components using Guid(cee19906bdc4c024ea5e8bb54b1f4dbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9aa1f3ec15603f7eab08eb9b75f3eef9') in 0.009322 seconds
+  Import took 0.012601 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001189 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019E74220040 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E78248040 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7E13DED0 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7DED6020 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E71373030 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7392B010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.35 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.726 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.44 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2343 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 111.8 MB.
+System memory in use after: 109.9 MB.
+
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 2857.
+Total: 3.051600 ms (FindLiveObjects: 0.239500 ms CreateObjectMapping: 0.115000 ms MarkObjects: 1.565500 ms  DeleteObjects: 1.130300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001175 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019E74220040 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E782C7010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7C05DED0 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E78421020 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7B462CF0 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E6CAE78E0 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.37 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.710 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.35 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2343 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 111.8 MB.
+System memory in use after: 109.8 MB.
+
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 2859.
+Total: 2.727500 ms (FindLiveObjects: 0.186000 ms CreateObjectMapping: 0.092600 ms MarkObjects: 1.360500 ms  DeleteObjects: 1.087300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001284 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019E74220040 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E782C7010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7C05DED0 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E78421020 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7B462CF0 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E71E00010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.35 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.718 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.35 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2342 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 111.8 MB.
+System memory in use after: 109.9 MB.
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2860.
+Total: 3.103100 ms (FindLiveObjects: 0.249300 ms CreateObjectMapping: 0.127800 ms MarkObjects: 1.535200 ms  DeleteObjects: 1.189900 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001136 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019E7B83A000 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001A021946010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7864B490 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E73818020 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E6CEAE030 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E71E00010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.36 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.736 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.35 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2342 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 111.8 MB.
+System memory in use after: 109.9 MB.
+
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 2862.
+Total: 2.909900 ms (FindLiveObjects: 0.188100 ms CreateObjectMapping: 0.095100 ms MarkObjects: 1.545100 ms  DeleteObjects: 1.080900 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001168 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019E7B83A000 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001A021946010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7864B490 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E73818020 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E6CEAE030 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E71E00010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.37 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.700 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.36 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2342 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 111.8 MB.
+System memory in use after: 109.9 MB.
+
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 2864.
+Total: 3.022400 ms (FindLiveObjects: 0.243700 ms CreateObjectMapping: 0.098400 ms MarkObjects: 1.566800 ms  DeleteObjects: 1.112500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001202 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019E7B83A000 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E78250050 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7BC67E60 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7116A020 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E6CEAE030 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E71E00010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.37 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.792 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.37 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2342 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 111.8 MB.
+System memory in use after: 109.9 MB.
+
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 2866.
+Total: 3.091000 ms (FindLiveObjects: 0.296500 ms CreateObjectMapping: 0.113100 ms MarkObjects: 1.429000 ms  DeleteObjects: 1.251400 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001403 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019E7B83A000 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E78250050 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7BC67E60 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E714CD010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7B462CF0 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E71E00010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.50 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.968 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.39 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2342 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 111.7 MB.
+System memory in use after: 109.8 MB.
+
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 2868.
+Total: 3.734600 ms (FindLiveObjects: 0.253900 ms CreateObjectMapping: 0.130000 ms MarkObjects: 2.041300 ms  DeleteObjects: 1.308400 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001168 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019E77D479A0 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001A020A00070 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E72F266D0 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E7B3D6050 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E6CEAE030 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019E71E00010 doesn't match image C:\Users\mirro\Documents\GitHub\ProjectCosmos\ProjectCosmosApplication\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.42 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.743 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.35 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2342 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 111.8 MB.
+System memory in use after: 109.9 MB.
+
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 2870.
+Total: 2.845600 ms (FindLiveObjects: 0.195500 ms CreateObjectMapping: 0.093800 ms MarkObjects: 1.444800 ms  DeleteObjects: 1.110900 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

@@ -5,7 +5,6 @@ using UnityEngine;
 public class Camera_StarGalaxyTarget : MonoBehaviour
 {
     public Transform target;
-
     float x;
     float y;
     float z;
