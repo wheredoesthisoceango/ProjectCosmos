@@ -6,15 +6,34 @@ public class FleetUnit : MonoBehaviour
 {
     public GameObject cruiser;
 
-    private Vector3 targetPosition;
+    private Vector3 target;
 
     float timeAtButtonDown;
     float timeAtButtonUp;
 
+    float x;
+    float y;
+    float z;
+
+    float rotationEase = 0.01f;
+
+    float translationEase = 1;
+
+    float timeRunning;
+
+    EasingFunction.Ease ease;
+    EasingFunction.Function func;
+
     // Start is called before the first frame update
     void Start()
     {
-        targetPosition = transform.position;
+        target = transform.position;
+        x = target.x;
+        y = target.y;
+        z = target.z;
+
+        ease = EasingFunction.Ease.EaseInOutSine;
+        func = EasingFunction.GetEasingFunction(ease);
     }
 
     // Update is called once per frame
@@ -32,11 +51,14 @@ public class FleetUnit : MonoBehaviour
             timeAtButtonDown = 0;
             timeAtButtonUp = 0;
 
+            timeRunning = 0;
+
             GetTargetPosition();
         }
 
-        if (Vector3.Distance(transform.position, targetPosition) > 10) {
-            MoveToTarget();
+        if (Vector3.Distance(transform.position, target) > 0.1f) {
+            RotateToTarget();
+            //MoveToTarget();
         }
 
         // check if enemy in range
@@ -53,11 +75,30 @@ public class FleetUnit : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (plane.Raycast(ray, out distance)) {
             var hitPoint = ray.GetPoint(distance);
-            print(hitPoint);
+            target = hitPoint;
+            //print(hitPoint);
         }
     }
 
+    void RotateToTarget() {        
+        var targetRotation = Quaternion.LookRotation(target - transform.position);
+
+        if (timeRunning < 1) {    
+            rotationEase = func(0, 1, timeRunning / 1);
+            timeRunning += Time.deltaTime;
+            print(rotationEase);
+        }
+
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationEase);
+    }
+
     void MoveToTarget() {
-        
+        //var positionLerpPct = 0.01f; //1f - Mathf.Exp((Mathf.Log(1f - 0.99f) / 0.2f) * Time.deltaTime);
+
+        //x = Mathf.Lerp(x, target.x, value);
+        //y = Mathf.Lerp(y, target.y, value);
+        //z = Mathf.Lerp(z, target.z, value);
+
+        transform.position = Vector3.Lerp(transform.position, target, translationEase / 100);  //new Vector3(x, y, z);
     }
 }
