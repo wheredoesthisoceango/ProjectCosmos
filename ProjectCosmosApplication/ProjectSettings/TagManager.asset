@@ -4,7 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Battlefield
+  - Friendly
+  - Neutral
+  - Hostile
+  - GalacticPlane
   layers:
   - Default
   - TransparentFX

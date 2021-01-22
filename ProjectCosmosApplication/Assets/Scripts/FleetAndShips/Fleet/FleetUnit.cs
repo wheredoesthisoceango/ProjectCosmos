@@ -6,34 +6,36 @@ public class FleetUnit : MonoBehaviour
 {
     public GameObject cruiser;
 
+    public int timeToMaxTurnSpeed = 6;
+    public int timeToMaxAcceleration = 18;
+
+    public int sensorRange = 25;
+
     private Vector3 target;
 
     float timeAtButtonDown;
     float timeAtButtonUp;
 
-    float x;
-    float y;
-    float z;
+    float rotTimeRunning;
+    float transTimeRunning;
 
-    float rotationEase = 0.01f;
+    Collider sphereCollider;
 
-    float translationEase = 1;
-
-    float timeRunning;
-
-    EasingFunction.Ease ease;
-    EasingFunction.Function func;
+    EasingFunction.Ease rotEase;
+    EasingFunction.Function rotEaseFunc;
+    EasingFunction.Ease transEase;
+    EasingFunction.Function transEaseFunc;
 
     // Start is called before the first frame update
     void Start()
     {
         target = transform.position;
-        x = target.x;
-        y = target.y;
-        z = target.z;
 
-        ease = EasingFunction.Ease.EaseInOutSine;
-        func = EasingFunction.GetEasingFunction(ease);
+        rotEase = EasingFunction.Ease.EaseInOutQuad;
+        rotEaseFunc = EasingFunction.GetEasingFunction(rotEase);
+
+        transEase = EasingFunction.Ease.EaseInOutCubic;
+        transEaseFunc = EasingFunction.GetEasingFunction(transEase);
     }
 
     // Update is called once per frame
@@ -51,17 +53,26 @@ public class FleetUnit : MonoBehaviour
             timeAtButtonDown = 0;
             timeAtButtonUp = 0;
 
-            timeRunning = 0;
+            rotTimeRunning = 0;
+            transTimeRunning = 0;
 
             GetTargetPosition();
         }
 
         if (Vector3.Distance(transform.position, target) > 0.1f) {
             RotateToTarget();
-            //MoveToTarget();
+            MoveToTarget();
         }
 
         // check if enemy in range
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, sensorRange);
+        if (hitColliders.Length > 0) {
+            foreach (Collider col in hitColliders) {
+                if (col.tag != "GalacticPlane" && col.tag != this.tag) {
+                    print(col.name);
+                }
+            }
+        }
 
         // if not, then maintain holding pattern
 
@@ -76,29 +87,29 @@ public class FleetUnit : MonoBehaviour
         if (plane.Raycast(ray, out distance)) {
             var hitPoint = ray.GetPoint(distance);
             target = hitPoint;
-            //print(hitPoint);
         }
     }
 
     void RotateToTarget() {        
         var targetRotation = Quaternion.LookRotation(target - transform.position);
+        var rotationEase = 0f;
 
-        if (timeRunning < 1) {    
-            rotationEase = func(0, 1, timeRunning / 1);
-            timeRunning += Time.deltaTime;
-            print(rotationEase);
+        if (rotTimeRunning < timeToMaxTurnSpeed) {    
+            rotationEase = rotEaseFunc(0, 1, rotTimeRunning / timeToMaxTurnSpeed);
+            rotTimeRunning += Time.deltaTime;
         }
 
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationEase);
     }
 
     void MoveToTarget() {
-        //var positionLerpPct = 0.01f; //1f - Mathf.Exp((Mathf.Log(1f - 0.99f) / 0.2f) * Time.deltaTime);
+        var translationEase = 0f;
+        
+        if (transTimeRunning < timeToMaxAcceleration) {    
+            translationEase = transEaseFunc(0, 1, transTimeRunning / timeToMaxAcceleration);
+            transTimeRunning += Time.deltaTime;
+        }
 
-        //x = Mathf.Lerp(x, target.x, value);
-        //y = Mathf.Lerp(y, target.y, value);
-        //z = Mathf.Lerp(z, target.z, value);
-
-        transform.position = Vector3.Lerp(transform.position, target, translationEase / 100);  //new Vector3(x, y, z);
+        transform.position = Vector3.Lerp(transform.position, target, translationEase);  //new Vector3(x, y, z);
     }
 }
