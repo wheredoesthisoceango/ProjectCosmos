@@ -8,8 +8,6 @@ public class FleetUnit : MonoBehaviour
     private int timeToMaxTurnSpeed = 6;
     [SerializeField]
     private int timeToMaxAcceleration = 18;
-    [SerializeField]
-    private int sensorRange = 25;
     private float timeAtButtonDown;
     private float timeAtButtonUp;
     private float rotTimeRunning;
@@ -22,27 +20,26 @@ public class FleetUnit : MonoBehaviour
     private EasingFunction.Function rotEaseFunc;
     private EasingFunction.Ease transEase;
     private EasingFunction.Function transEaseFunc;
-    private Vector3 playerSelectedTargetPosition;
+    private Vector3 fleetTargetPosition;
     private List<GameObject> fleetUnitShips = new List<GameObject>();
     private GameObject targetFleetUnitGO;
 
-    public int TimeToMaxTurnSpeed { get => timeToMaxTurnSpeed; set => timeToMaxTurnSpeed = value; }
-    public int TimeToMaxAcceleration { get => timeToMaxAcceleration; set => timeToMaxAcceleration = value; }
-    public int SensorRange { get => sensorRange; set => sensorRange = value; }
-    public Vector3 PlayerSelectedTargetPosition { get => playerSelectedTargetPosition; set => playerSelectedTargetPosition = value; }
-    public float TimeAtButtonDown { get => timeAtButtonDown; set => timeAtButtonDown = value; }
-    public float TimeAtButtonUp { get => timeAtButtonUp; set => timeAtButtonUp = value; }
-    public float RotTimeRunning { get => rotTimeRunning; set => rotTimeRunning = value; }
-    public float TransTimeRunning { get => transTimeRunning; set => transTimeRunning = value; }
-    public bool IsPlayerFleet { get => isPlayerFleet; set => isPlayerFleet = value; }
-    public bool InCombat { get => inCombat; set => inCombat = value; }
-    public bool IsAlive { get => isAlive; set => isAlive = value; }
-    public List<GameObject> FleetUnitShips { get => fleetUnitShips; set => fleetUnitShips = value; }
-    public GameObject TargetFleetUnitGO { get => targetFleetUnitGO; set => targetFleetUnitGO = value; }
-    public EasingFunction.Ease RotEase { get => rotEase; set => rotEase = value; }
-    public EasingFunction.Function RotEaseFunc { get => rotEaseFunc; set => rotEaseFunc = value; }
-    public EasingFunction.Ease TransEase { get => transEase; set => transEase = value; }
-    public EasingFunction.Function TransEaseFunc { get => transEaseFunc; set => transEaseFunc = value; }
+    private int TimeToMaxTurnSpeed { get => timeToMaxTurnSpeed; set => timeToMaxTurnSpeed = value; }
+    private int TimeToMaxAcceleration { get => timeToMaxAcceleration; set => timeToMaxAcceleration = value; }
+    private Vector3 FleetTargetPosition { get => fleetTargetPosition; set => fleetTargetPosition = value; }
+    private float TimeAtButtonDown { get => timeAtButtonDown; set => timeAtButtonDown = value; }
+    private float TimeAtButtonUp { get => timeAtButtonUp; set => timeAtButtonUp = value; }
+    private float RotTimeRunning { get => rotTimeRunning; set => rotTimeRunning = value; }
+    private float TransTimeRunning { get => transTimeRunning; set => transTimeRunning = value; }
+    private bool IsPlayerFleet { get => isPlayerFleet; set => isPlayerFleet = value; }
+    private bool InCombat { get => inCombat; set => inCombat = value; }
+    private bool IsAlive { get => isAlive; set => isAlive = value; }
+    private List<GameObject> FleetUnitShips { get => fleetUnitShips; set => fleetUnitShips = value; }
+    private GameObject TargetFleetUnitGO { get => targetFleetUnitGO; set => targetFleetUnitGO = value; }
+    private EasingFunction.Ease RotEase { get => rotEase; set => rotEase = value; }
+    private EasingFunction.Function RotEaseFunc { get => rotEaseFunc; set => rotEaseFunc = value; }
+    private EasingFunction.Ease TransEase { get => transEase; set => transEase = value; }
+    private EasingFunction.Function TransEaseFunc { get => transEaseFunc; set => transEaseFunc = value; }
 
     // Start is called before the first frame update
     void Start()
@@ -51,7 +48,7 @@ public class FleetUnit : MonoBehaviour
             IsPlayerFleet = true;
         }
 
-        PlayerSelectedTargetPosition = transform.position;
+        FleetTargetPosition = transform.position;
 
         RotEase = EasingFunction.Ease.EaseInOutQuad;
         RotEaseFunc = EasingFunction.GetEasingFunction(RotEase);
@@ -69,7 +66,28 @@ public class FleetUnit : MonoBehaviour
     {
         CheckFleetStatus();
 
-        if (IsPlayerFleet && !InCombat) {
+        // check if enemy in range
+        if (!inCombat) {
+            targetFleetUnitGO = CheckForEnemyFleet();
+        }
+
+        // target found, entering combat
+        if (!inCombat && targetFleetUnitGO != null && targetFleetUnitGO.tag == "Hostile") {
+            inCombat = true;
+            fleetTargetPosition = transform.position;
+            foreach (GameObject ship in fleetUnitShips) {
+                var combatPosition = GetPositionNearEnemy(ship, targetFleetUnitGO);
+                ship.GetComponent<ShipTemplate>().CombatTargetPosition = combatPosition;
+            }
+        }
+        
+        // target is dead, exiting combat
+        if (targetFleetUnitGO == null && inCombat) {
+            print("out of combat?");
+            inCombat = false;
+        }
+
+        if (isPlayerFleet && !inCombat) {
             if (Input.GetMouseButtonDown(1)) {
                 TimeAtButtonDown = Time.fixedTime;
             }
@@ -85,33 +103,48 @@ public class FleetUnit : MonoBehaviour
                 RotTimeRunning = 0;
                 TransTimeRunning = 0;
 
-                PlayerSelectedTargetPosition = GetTargetPosition();
+                FleetTargetPosition = GetTargetPosition();
             }
 
-            if (Vector3.Distance(transform.position, PlayerSelectedTargetPosition) > 0.1f) {
-                RotateToTarget(PlayerSelectedTargetPosition);
-                MoveToTarget(PlayerSelectedTargetPosition);
+            if (Vector3.Distance(transform.position, FleetTargetPosition) > 0.1f) {
+                RotateToTarget(this.gameObject, FleetTargetPosition, timeToMaxTurnSpeed);
+                MoveToTarget(this.gameObject, FleetTargetPosition, timeToMaxAcceleration);
             }
         }
 
-        // check if enemy in range
-        if (!InCombat) {
-            TargetFleetUnitGO = CheckForEnemyFleet();
+        if (isPlayerFleet && inCombat)
+        {
+            foreach (GameObject ship in fleetUnitShips) {
+                //Debug.DrawLine (ship.transform.position, ship.transform.position + ship.GetComponent<ShipTemplate>().CombatTargetPosition * 10, Color.red, Mathf.Infinity);
+                if (Vector3.Distance(ship.transform.position, ship.GetComponent<ShipTemplate>().CombatTargetPosition) > 0.1f) {
+                    //print("move to combat pos dist: " + Vector3.Distance(ship.transform.position, ship.GetComponent<ShipTemplate>().CombatTargetPosition));
+                    RotateToTarget(ship, targetFleetUnitGO.transform.position, 15);
+                    MoveToTarget(ship, ship.GetComponent<ShipTemplate>().CombatTargetPosition, 18);
+                }
+                else {
+                    ship.GetComponent<ShipTemplate>().DoDamage(targetFleetUnitGO.GetComponent<FleetUnit>());
+                    //SendDamage(TargetFleetUnitGO);                    
+                }
+            }
         }
-        if (TargetFleetUnitGO != null && TargetFleetUnitGO.tag == "Hostile") {
-            InCombat = true;
-            SendDamage(TargetFleetUnitGO);
-            RotateToTarget(TargetFleetUnitGO.transform.position);
-        }
-        else if (TargetFleetUnitGO == null && InCombat) {
-            //target gone, dead?
-            print("out of combat?");
-            InCombat = false;
-        }
+    }
 
-        // if not, then maintain holding pattern
+    private Vector3 GetPositionNearEnemy(GameObject shipToMove, GameObject targetFleet) {
+        var targetDirection = (targetFleet.transform.position - shipToMove.transform.position).normalized;
+        var targetDist = Vector3.Distance(shipToMove.transform.position, targetFleet.transform.position);
+        
+        
+        var travelDist = targetDist - shipToMove.GetComponent<ShipTemplate>().WeaponComponent.FiringRange;
+        if (travelDist > 0) {
+            targetDirection *= travelDist;
+        }
+        targetDirection += shipToMove.transform.position;
+        Debug.DrawLine (shipToMove.transform.position, targetDirection, Color.red, Mathf.Infinity);
+        //print("target vector" + targetDirection);
+        //GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        //sphere.transform.position = targetDirection;
 
-        // else there is, approach enemy and engage in combat
+        return targetDirection;
     }
 
     private void CheckFleetStatus() {
@@ -148,7 +181,7 @@ public class FleetUnit : MonoBehaviour
     }
 
     GameObject CheckForEnemyFleet() {        
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, SensorRange);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, FleetUnitShips[0].GetComponent<ShipTemplate>().SensorComponent.CurrentSensorResolution);
         float distToFleet = 10000;
         GameObject targetFleetUnitGO = null;
         if (hitColliders.Length > 0) {
@@ -177,26 +210,26 @@ public class FleetUnit : MonoBehaviour
         return hitPoint;
     }
 
-    void RotateToTarget(Vector3 target) {        
-        var targetRotation = Quaternion.LookRotation(target - transform.position);
+    void RotateToTarget(GameObject objToRotate, Vector3 target, int timeToMaxTurnSpeed) {        
+        var targetRotation = Quaternion.LookRotation(target - objToRotate.transform.position);
         var rotationEase = 0f;
 
-        if (RotTimeRunning < TimeToMaxTurnSpeed) {    
-            rotationEase = RotEaseFunc(0, 1, RotTimeRunning / TimeToMaxTurnSpeed);
+        if (RotTimeRunning < timeToMaxTurnSpeed) {    
+            rotationEase = RotEaseFunc(0, 1, RotTimeRunning / timeToMaxTurnSpeed);
             RotTimeRunning += Time.deltaTime;
         }
 
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationEase);
+        objToRotate.transform.rotation = Quaternion.Lerp(objToRotate.transform.rotation, targetRotation, rotationEase);
     }
 
-    void MoveToTarget(Vector3 target) {
+    void MoveToTarget(GameObject objToMove, Vector3 target, int timeToMaxAcceleration) {
         var translationEase = 0f;
         
-        if (TransTimeRunning < TimeToMaxAcceleration) {    
-            translationEase = TransEaseFunc(0, 1, TransTimeRunning / TimeToMaxAcceleration);
+        if (TransTimeRunning < timeToMaxAcceleration) {    
+            translationEase = TransEaseFunc(0, 1, TransTimeRunning / timeToMaxAcceleration);
             TransTimeRunning += Time.deltaTime;
         }
 
-        transform.position = Vector3.Lerp(transform.position, PlayerSelectedTargetPosition, translationEase);  //new Vector3(x, y, z);
+        objToMove.transform.position = Vector3.Lerp(objToMove.transform.position, target, translationEase);  //new Vector3(x, y, z);
     }
 }

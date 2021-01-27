@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class SensorComponent : ShipComponent
 {
-    private float sensorStength;
+    private float sensorResolution;
+    private float currentSensorResolution;
 
-    public float SensorStength { get => sensorStength; set => sensorStength = value; }
+    public float SensorResolution { get => sensorResolution; set => sensorResolution = value; }
+    public float CurrentSensorResolution { get => currentSensorResolution; set => currentSensorResolution = value; }
 
     public SensorComponent() {
-        sensorStength = 10;
+        sensorResolution = currentSensorResolution = 6;
     }
 
 }
