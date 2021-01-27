@@ -808,10 +808,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7361908b79f8c1409eebfd87498e231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cruiser: {fileID: 0}
   timeToMaxTurnSpeed: 6
   timeToMaxAcceleration: 18
-  sensorRange: 25
+  sensorRange: 10
 --- !u!4 &325250662
 Transform:
   m_ObjectHideFlags: 0
@@ -887,10 +886,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7361908b79f8c1409eebfd87498e231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cruiser: {fileID: 0}
   timeToMaxTurnSpeed: 6
   timeToMaxAcceleration: 18
-  sensorRange: 25
+  sensorRange: 50
 --- !u!4 &335159567
 Transform:
   m_ObjectHideFlags: 0
@@ -976,7 +974,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 353093343}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be76e5f14cfee674cb30b491fb72b09b, type: 3}
   m_Name: 
@@ -1023,7 +1021,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minFov: 20
-  maxFov: 90
+  maxFov: 80
   sensitivity: 25
 --- !u!114 &353093347
 MonoBehaviour:
@@ -1038,6 +1036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 469424056}
+  systemSelected: 1
 --- !u!1 &469424055
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,6 +1542,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4338556437950364751, guid: d93b5a53533e9e4439178fe91d79a839, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4338556437950364751, guid: d93b5a53533e9e4439178fe91d79a839, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4338556437950364751, guid: d93b5a53533e9e4439178fe91d79a839, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4338556437950364751, guid: d93b5a53533e9e4439178fe91d79a839, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1882,11 +1893,11 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 300
+  far clip plane: 400
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1909,7 +1920,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 100, z: -100}
+  m_LocalPosition: {x: 0, y: 175, z: -175}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2138677393}

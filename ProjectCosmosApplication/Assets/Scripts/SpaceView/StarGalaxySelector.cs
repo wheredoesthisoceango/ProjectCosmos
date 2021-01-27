@@ -22,7 +22,8 @@ public class StarGalaxySelector : MonoBehaviour
 
     void OnMouseDown() 
     {
-        print("moving to " + representedStar);
+        //print("moving to " + representedStar);
         camController.GetComponent<Camera_StarGalaxyTarget>().target = representedStar.transform;
+        camController.GetComponent<Camera_StarGalaxyTarget>().systemSelected = true;
     }
 }
