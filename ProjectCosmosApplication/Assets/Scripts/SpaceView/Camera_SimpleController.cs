@@ -1,7 +1,4 @@
-﻿#if ENABLE_INPUT_SYSTEM 
-using UnityEngine.InputSystem;
-#endif
-
+﻿using UnityEngine.InputSystem;
 using UnityEngine;
 
 public class Camera_SimpleController : MonoBehaviour
@@ -14,6 +11,7 @@ public class Camera_SimpleController : MonoBehaviour
         public float x;
         public float y;
         public float z;
+        public float zoom;
 
         public void SetFromTransform(Transform t)
         {
@@ -25,12 +23,23 @@ public class Camera_SimpleController : MonoBehaviour
             z = t.position.z;
         }
 
-        public void Translate(Vector3 translation)
+        public void Translate(Vector3 translation, Vector3 zoomDirection)
         {
             Vector3 rotatedTranslation = Quaternion.Euler(pitch, yaw, roll) * translation;
 
+            if (zoom > 0) {
+                x += zoomDirection.x * 10;
+                y += zoomDirection.y * 10;
+                z += zoomDirection.z * 10;                
+            }
+            else if (zoom < 0) {
+                x -= zoomDirection.x * 10;
+                y -= zoomDirection.y * 10;
+                z -= zoomDirection.z * 10;                
+            }
+
             x += rotatedTranslation.x;
-            y += rotatedTranslation.y;
+            //y += rotatedTranslation.y;
             z += rotatedTranslation.z;
         }
 
@@ -75,12 +84,12 @@ public class Camera_SimpleController : MonoBehaviour
     [Tooltip("Whether or not to invert our Y axis for mouse input to rotation.")]
     public bool invertY = false;
 
-#if ENABLE_INPUT_SYSTEM
     InputAction movementAction;
-    InputAction verticalMovementAction;
+    //InputAction verticalMovementAction;
     InputAction lookAction;
-    InputAction boostFactorAction;
-    bool        mouseRightButtonPressed;
+    //InputAction boostFactorAction;
+    InputAction zoomAction;
+    bool mouseRightButtonPressed;
 
     void Start()
     {
@@ -88,8 +97,8 @@ public class Camera_SimpleController : MonoBehaviour
 
         lookAction = map.AddAction("look", binding: "<Mouse>/delta");
         movementAction = map.AddAction("move", binding: "<Gamepad>/leftStick");
-        verticalMovementAction = map.AddAction("Vertical Movement");
-        boostFactorAction = map.AddAction("Boost Factor", binding: "<Mouse>/scroll");
+        //verticalMovementAction = map.AddAction("Vertical Movement");
+        zoomAction = map.AddAction("zoom", binding: "<Mouse>/scroll");
 
         lookAction.AddBinding("<Gamepad>/rightStick").WithProcessor("scaleVector2(x=15, y=15)");
         movementAction.AddCompositeBinding("Dpad")
@@ -101,21 +110,21 @@ public class Camera_SimpleController : MonoBehaviour
             .With("Left", "<Keyboard>/leftArrow")
             .With("Right", "<Keyboard>/d")
             .With("Right", "<Keyboard>/rightArrow");
-        verticalMovementAction.AddCompositeBinding("Dpad")
+        /*verticalMovementAction.AddCompositeBinding("Dpad")
             .With("Up", "<Keyboard>/pageUp")
             .With("Down", "<Keyboard>/pageDown")
             .With("Up", "<Keyboard>/e")
             .With("Down", "<Keyboard>/q")
             .With("Up", "<Gamepad>/rightshoulder")
-            .With("Down", "<Gamepad>/leftshoulder");
-        boostFactorAction.AddBinding("<Gamepad>/Dpad").WithProcessor("scaleVector2(x=1, y=4)");
+            .With("Down", "<Gamepad>/leftshoulder");*/
+        //boostFactorAction.AddBinding("<Gamepad>/Dpad").WithProcessor("scaleVector2(x=1, y=4)");
 
         movementAction.Enable();
         lookAction.Enable();
-        verticalMovementAction.Enable();
-        boostFactorAction.Enable();
+        zoomAction.Enable();
+        //verticalMovementAction.Enable();
+        //boostFactorAction.Enable();
     }
-#endif
 
     void OnEnable()
     {
@@ -126,65 +135,15 @@ public class Camera_SimpleController : MonoBehaviour
     Vector3 GetInputTranslationDirection()
     {
         Vector3 direction = Vector3.zero;
-#if ENABLE_INPUT_SYSTEM
         var moveDelta = movementAction.ReadValue<Vector2>();
         direction.x = moveDelta.x;
         direction.z = moveDelta.y;
-        direction.y = verticalMovementAction.ReadValue<Vector2>().y;
-#else
-        if (Input.GetKey(KeyCode.W))
-        {
-            direction += Vector3.forward;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            direction += Vector3.back;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            direction += Vector3.left;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            direction += Vector3.right;
-        }
-        if (Input.GetKey(KeyCode.Q))
-        {
-            direction += Vector3.down;
-        }
-        if (Input.GetKey(KeyCode.E))
-        {
-            direction += Vector3.up;
-        }
-#endif
+        //direction.y = verticalMovementAction.ReadValue<Vector2>().y;
         return direction;
     }
     
     void Update()
     {
-        // Exit Sample  
-
-        if (IsEscapePressed())
-        {
-            Application.Quit();
-            #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false; 
-            #endif
-        }
-
-        // Hide and lock cursor when right mouse button pressed
-        if (IsRightMouseButtonDown())
-        {
-            //Cursor.lockState = CursorLockMode.Locked;
-        }
-
-        // Unlock and show cursor when right mouse button released
-        if (IsRightMouseButtonUp())
-        {
-            //Cursor.visible = true;
-            //Cursor.lockState = CursorLockMode.None;
-        }
-
         // Rotation
         if (IsCameraRotationAllowed())
         {
@@ -196,23 +155,17 @@ public class Camera_SimpleController : MonoBehaviour
 
             m_TargetCameraState.yaw += mouseMovement.x * mouseSensitivityFactor;
             m_TargetCameraState.pitch += mouseMovement.y * mouseSensitivityFactor;
-            m_TargetCameraState.pitch = Mathf.Clamp(m_TargetCameraState.pitch, -30, 45);
+            m_TargetCameraState.pitch = Mathf.Clamp(m_TargetCameraState.pitch, 30, 75);
         }
         
         // Translation
-        var translation = GetInputTranslationDirection() * Time.deltaTime * 20;
+        var translation = GetInputTranslationDirection() * Time.deltaTime * 25;
 
-        // Speed up movement when shift key held
-        if (IsBoostPressed())
-        {
-            translation *= 10.0f;
-        }
-        
-        // Modify movement by a boost factor (defined in Inspector and modified in play mode through the mouse scroll wheel)
-        //boost += GetBoostFactor();
-        //translation *= Mathf.Pow(2.0f, boost);
+        m_TargetCameraState.zoom = GetZoomAction();
 
-        m_TargetCameraState.Translate(translation);
+        translation *= Mathf.Pow(2.0f, 4);
+
+        m_TargetCameraState.Translate(translation, transform.forward);
 
         // Framerate-independent interpolation
         // Calculate the lerp amount, such that we get 99% of the way to our target in the specified time
@@ -223,72 +176,30 @@ public class Camera_SimpleController : MonoBehaviour
         m_InterpolatingCameraState.UpdateTransform(transform);
     }
 
-    float GetBoostFactor()
+    float GetZoomAction() 
     {
-#if ENABLE_INPUT_SYSTEM
-        return boostFactorAction.ReadValue<Vector2>().y * 0.01f;
-#else
-        return Input.mouseScrollDelta.y * 0.2f;
-#endif
+        return zoomAction.ReadValue<Vector2>().y;
     }
 
     Vector2 GetInputLookRotation()
     {
-#if ENABLE_INPUT_SYSTEM
         return lookAction.ReadValue<Vector2>();
-#else
-        return new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y")) * 10;
-#endif
-    }
-
-    bool IsBoostPressed()
-    {
-#if ENABLE_INPUT_SYSTEM
-        bool boost = Keyboard.current != null ? Keyboard.current.leftShiftKey.isPressed : false; 
-        boost |= Gamepad.current != null ? Gamepad.current.xButton.isPressed : false;
-        return boost;
-#else
-        return Input.GetKey(KeyCode.LeftShift);
-#endif
-
-    }
-
-    bool IsEscapePressed()
-    {
-#if ENABLE_INPUT_SYSTEM
-        return Keyboard.current != null ? Keyboard.current.escapeKey.isPressed : false; 
-#else
-        return Input.GetKey(KeyCode.Escape);
-#endif
     }
 
     bool IsCameraRotationAllowed()
     {
-#if ENABLE_INPUT_SYSTEM
         bool canRotate = Mouse.current != null ? Mouse.current.rightButton.isPressed : false;
         canRotate |= Gamepad.current != null ? Gamepad.current.rightStick.ReadValue().magnitude > 0 : false;
         return canRotate;
-#else
-        return Input.GetMouseButton(1);
-#endif
     }
 
     bool IsRightMouseButtonDown()
     {
-#if ENABLE_INPUT_SYSTEM
         return Mouse.current != null ? Mouse.current.rightButton.isPressed : false;
-#else
-        return Input.GetMouseButtonDown(1);
-#endif
     }
 
     bool IsRightMouseButtonUp()
     {
-#if ENABLE_INPUT_SYSTEM
         return Mouse.current != null ? !Mouse.current.rightButton.isPressed : false;
-#else
-        return Input.GetMouseButtonUp(1);
-#endif
     }
-
 }

@@ -88,12 +88,12 @@ public class FleetUnit : MonoBehaviour
         }
 
         if (isPlayerFleet && !inCombat) {
-            if (Input.GetMouseButtonDown(1)) {
+            /*if (Input.GetMouseButtonDown(1)) {
                 TimeAtButtonDown = Time.fixedTime;
             }
             if (Input.GetMouseButtonUp(1)) {
                 TimeAtButtonUp = Time.fixedTime;
-            }
+            }*/
 
             float buttonClickTime = TimeAtButtonUp - TimeAtButtonDown;
             if (buttonClickTime > 0 && buttonClickTime < 0.25) {    

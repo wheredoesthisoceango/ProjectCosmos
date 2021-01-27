@@ -17,10 +17,10 @@ public class GalaxySelector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {        
-        if (Input.GetKeyDown(KeyCode.F)) {
+        /*if (Input.GetKeyDown(KeyCode.F)) {
             print("return to galaxy view");
             print(representedPosition.transform);
             camController.GetComponent<Camera_StarGalaxyTarget>().target = representedPosition.transform;
-        }
+        }*/
     }
 }
