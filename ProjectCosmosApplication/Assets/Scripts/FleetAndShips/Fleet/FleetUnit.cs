@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class FleetUnit : MonoBehaviour
 {
@@ -88,12 +89,12 @@ public class FleetUnit : MonoBehaviour
         }
 
         if (isPlayerFleet && !inCombat) {
-            /*if (Input.GetMouseButtonDown(1)) {
+            if (Mouse.current.rightButton.wasPressedThisFrame) {
                 TimeAtButtonDown = Time.fixedTime;
             }
-            if (Input.GetMouseButtonUp(1)) {
+            if (Mouse.current.rightButton.wasReleasedThisFrame) {
                 TimeAtButtonUp = Time.fixedTime;
-            }*/
+            }
 
             float buttonClickTime = TimeAtButtonUp - TimeAtButtonDown;
             if (buttonClickTime > 0 && buttonClickTime < 0.25) {    
@@ -203,7 +204,7 @@ public class FleetUnit : MonoBehaviour
         Vector3 hitPoint = Vector3.zero;
         float distance;
 
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
         if (plane.Raycast(ray, out distance)) {
             hitPoint = ray.GetPoint(distance);
         }

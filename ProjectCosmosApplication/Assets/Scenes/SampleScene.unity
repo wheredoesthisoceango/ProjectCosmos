@@ -220,7 +220,6 @@ GameObject:
   - component: {fileID: 77790587}
   - component: {fileID: 77790589}
   - component: {fileID: 77790588}
-  - component: {fileID: 77790590}
   - component: {fileID: 77790591}
   m_Layer: 0
   m_Name: System3
@@ -292,20 +291,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 77790586}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &77790590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 77790586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff22cb93afe8f2747b28827afc430364, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camController: {fileID: 353093343}
-  representedStar: {fileID: 948186230}
 --- !u!135 &77790591
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -427,7 +412,6 @@ GameObject:
   - component: {fileID: 112799757}
   - component: {fileID: 112799759}
   - component: {fileID: 112799758}
-  - component: {fileID: 112799760}
   - component: {fileID: 112799761}
   m_Layer: 0
   m_Name: System2
@@ -499,20 +483,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112799756}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &112799760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 112799756}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff22cb93afe8f2747b28827afc430364, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camController: {fileID: 353093343}
-  representedStar: {fileID: 698585609}
 --- !u!135 &112799761
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1061,7 +1031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7361908b79f8c1409eebfd87498e231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToMaxTurnSpeed: 6
+  timeToMaxTurnSpeed: 18
   timeToMaxAcceleration: 18
 --- !u!4 &335159567
 Transform:
@@ -1192,8 +1162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8df17c561106c9469e315b65f44e612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 469424056}
-  systemSelected: 1
+  camFocus: {fileID: 0}
 --- !u!1 &469424055
 GameObject:
   m_ObjectHideFlags: 0
@@ -1205,7 +1174,6 @@ GameObject:
   - component: {fileID: 469424056}
   - component: {fileID: 469424058}
   - component: {fileID: 469424057}
-  - component: {fileID: 469424059}
   m_Layer: 0
   m_Name: GalaxyCloud
   m_TagString: Untagged
@@ -1276,20 +1244,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469424055}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &469424059
-MonoBehaviour:
+--- !u!1 &494927600
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 469424055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7afb33b94081f494a8fd403539f52647, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camController: {fileID: 353093343}
-  representedPosition: {fileID: 1678877173}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 494927601}
+  m_Layer: 0
+  m_Name: Focus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &494927601
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494927600}
+  m_LocalRotation: {x: 0.38268343, y: -0, z: -0, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1687258585}
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &594083197
 GameObject:
   m_ObjectHideFlags: 0
@@ -1301,7 +1286,6 @@ GameObject:
   - component: {fileID: 594083198}
   - component: {fileID: 594083200}
   - component: {fileID: 594083199}
-  - component: {fileID: 594083201}
   - component: {fileID: 594083202}
   m_Layer: 0
   m_Name: System1
@@ -1373,20 +1357,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 594083197}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &594083201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 594083197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff22cb93afe8f2747b28827afc430364, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camController: {fileID: 353093343}
-  representedStar: {fileID: 1689457186}
 --- !u!135 &594083202
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2146,6 +2116,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1678877174}
+  - component: {fileID: 1678877175}
   m_Layer: 0
   m_Name: GalaxySystem
   m_TagString: Untagged
@@ -2171,6 +2142,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1678877175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678877173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7afb33b94081f494a8fd403539f52647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCam: {fileID: 1687258581}
+  galaxySystem: {fileID: 469424055}
+  starSystems:
+  - {fileID: 1689457186}
+  - {fileID: 698585609}
+  - {fileID: 948186230}
 --- !u!1 &1687258581
 GameObject:
   m_ObjectHideFlags: 0
@@ -2184,6 +2173,7 @@ GameObject:
   - component: {fileID: 1687258582}
   - component: {fileID: 1687258586}
   - component: {fileID: 1687258583}
+  - component: {fileID: 1687258587}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2290,13 +2280,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
-  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 175, z: -175}
+  m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -250}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2138677393}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 494927601}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!114 &1687258586
 MonoBehaviour:
@@ -2330,6 +2320,19 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &1687258587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687258581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8df17c561106c9469e315b65f44e612, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camFocus: {fileID: 494927600}
 --- !u!1 &1689457186
 GameObject:
   m_ObjectHideFlags: 0
