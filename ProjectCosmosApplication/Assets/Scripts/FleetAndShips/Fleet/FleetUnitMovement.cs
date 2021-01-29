@@ -7,27 +7,27 @@ public class FleetUnitMovement : MonoBehaviour
 {
     public float thrust;
     //public float maxVelocity;
-    public int range;
+    public int stoppingRange;
     public float rotationSpeed;
-    public GameObject target;
+    //public GameObject target;
     
     private List<GameObject> fleetShips = new List<GameObject>();
-    private float rotTimeRunning;
-    private EasingFunction.Function rotEaseFunc;
     private float timeAtButtonDown;
     private float timeAtButtonUp;
-    private Vector3 targetPosition;
 
     private void Start() {
         foreach (Transform child in transform) {
             fleetShips.Add(child.gameObject);
         }
-        
-        rotEaseFunc = EasingFunction.GetEasingFunction(EasingFunction.Ease.EaseInOutQuad);
+
+        // (At some point) Will need to offset target position for each ship to maintain some sort of formation
+        foreach (GameObject ship in fleetShips) {
+            ship.GetComponent<ShipTemplate>().TargetPosition = transform.position;
+        }
     }
 
     private void Update() {
-        /*if (Mouse.current.rightButton.wasPressedThisFrame) {
+        if (Mouse.current.rightButton.wasPressedThisFrame) {
             timeAtButtonDown = Time.fixedTime;
         }
         if (Mouse.current.rightButton.wasReleasedThisFrame) {
@@ -39,22 +39,25 @@ public class FleetUnitMovement : MonoBehaviour
             timeAtButtonDown = 0;
             timeAtButtonUp = 0;
 
-            rotTimeRunning = 0;
+            var targetPosition = GetTargetPosition();
 
-            targetPosition = GetTargetPosition();
-        }*/
-
+            // (At some point) Will need to offset target position for each ship to maintain some sort of formation
+            foreach (GameObject ship in fleetShips) {
+                ship.GetComponent<ShipTemplate>().TargetPosition = targetPosition;
+            }
+        }
 
         foreach (GameObject ship in fleetShips) {
             Rigidbody rb = ship.GetComponent<Rigidbody>();
+            ShipTemplate shipTemplate = ship.GetComponent<ShipTemplate>();
 
-            var dist = Vector3.Distance(ship.transform.position, target.transform.position);
-            var rot = AngleDir(ship.transform, target.transform);
+            var dist = Vector3.Distance(ship.transform.position, shipTemplate.TargetPosition);
+            var rot = AngleDir(ship.transform, shipTemplate.TargetPosition);
             
-            if (dist > range) {
-                rb.AddRelativeForce(Vector3.forward * thrust, ForceMode.Force);
+            if (dist > stoppingRange) {
+                rb.AddRelativeForce(Vector3.forward * thrust);
             }            
-            else if (dist < range && rb.velocity.magnitude > 0) {
+            else if (dist < stoppingRange && rb.velocity.magnitude > 0) {
                 if (rb.velocity.magnitude <= 0.1f) {
                     rb.velocity = Vector3.zero;
                 }
@@ -82,9 +85,8 @@ public class FleetUnitMovement : MonoBehaviour
         }
     }
 
-
-    private float AngleDir(Transform objectFacing, Transform objectToTest) {
-        Vector3 localPos = objectFacing.InverseTransformPoint(objectToTest.position);
+    private float AngleDir(Transform objectFacing, Vector3 objectToTest) {
+        Vector3 localPos = objectFacing.InverseTransformPoint(objectToTest);
         return localPos.x;
     }
     

@@ -12,7 +12,7 @@ public class ShipTemplate : MonoBehaviour
     
     private bool isAlive;
 
-    private Vector3 combatTargetPosition;
+    private Vector3 targetPosition;
 
     private FieldComponent fieldComponent = new FieldComponent();
     private ArmorComponent armorComponent = new ArmorComponent();
@@ -35,7 +35,7 @@ public class ShipTemplate : MonoBehaviour
     public DComputeComponent DComputeComponent { get => dComputeComponent; set => dComputeComponent = value; }
     public CComputeComponent CComputeComponent { get => cComputeComponent; set => cComputeComponent = value; }
     public bool IsAlive { get => isAlive; set => isAlive = value; }
-    public Vector3 CombatTargetPosition { get => combatTargetPosition; set => combatTargetPosition = value; }
+    public Vector3 TargetPosition { get => targetPosition; set => targetPosition = value; }
 
     void Start()
     {

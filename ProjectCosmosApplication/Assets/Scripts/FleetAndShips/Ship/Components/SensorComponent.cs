@@ -11,7 +11,7 @@ public class SensorComponent : ShipComponent
     public float CurrentSensorResolution { get => currentSensorResolution; set => currentSensorResolution = value; }
 
     public SensorComponent() {
-        sensorResolution = currentSensorResolution = 6;
+        sensorResolution = currentSensorResolution = 12;
     }
 
 }

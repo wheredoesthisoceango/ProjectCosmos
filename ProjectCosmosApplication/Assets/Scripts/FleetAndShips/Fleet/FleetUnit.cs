@@ -5,60 +5,36 @@ using UnityEngine.InputSystem;
 
 public class FleetUnit : MonoBehaviour
 {
-    [SerializeField]
-    private int timeToMaxTurnSpeed = 6;
-    [SerializeField]
-    private int timeToMaxAcceleration = 18;
     private float timeAtButtonDown;
     private float timeAtButtonUp;
-    private float rotTimeRunning;
-    private float transTimeRunning;
     private bool isPlayerFleet;
+    [SerializeField]
     private bool inCombat;
     private bool isAlive;
-
-    private EasingFunction.Ease rotEase;
-    private EasingFunction.Function rotEaseFunc;
-    private EasingFunction.Ease transEase;
-    private EasingFunction.Function transEaseFunc;
-    private Vector3 fleetTargetPosition;
     private List<GameObject> fleetUnitShips = new List<GameObject>();
     private GameObject targetFleetUnitGO;
 
-    private int TimeToMaxTurnSpeed { get => timeToMaxTurnSpeed; set => timeToMaxTurnSpeed = value; }
-    private int TimeToMaxAcceleration { get => timeToMaxAcceleration; set => timeToMaxAcceleration = value; }
-    private Vector3 FleetTargetPosition { get => fleetTargetPosition; set => fleetTargetPosition = value; }
-    private float TimeAtButtonDown { get => timeAtButtonDown; set => timeAtButtonDown = value; }
-    private float TimeAtButtonUp { get => timeAtButtonUp; set => timeAtButtonUp = value; }
-    private float RotTimeRunning { get => rotTimeRunning; set => rotTimeRunning = value; }
-    private float TransTimeRunning { get => transTimeRunning; set => transTimeRunning = value; }
-    private bool IsPlayerFleet { get => isPlayerFleet; set => isPlayerFleet = value; }
-    private bool InCombat { get => inCombat; set => inCombat = value; }
-    private bool IsAlive { get => isAlive; set => isAlive = value; }
-    private List<GameObject> FleetUnitShips { get => fleetUnitShips; set => fleetUnitShips = value; }
-    private GameObject TargetFleetUnitGO { get => targetFleetUnitGO; set => targetFleetUnitGO = value; }
-    private EasingFunction.Ease RotEase { get => rotEase; set => rotEase = value; }
-    private EasingFunction.Function RotEaseFunc { get => rotEaseFunc; set => rotEaseFunc = value; }
-    private EasingFunction.Ease TransEase { get => transEase; set => transEase = value; }
-    private EasingFunction.Function TransEaseFunc { get => transEaseFunc; set => transEaseFunc = value; }
+    public float thrust;
+    public float rotationSpeed;
+    public float stoppingDist;
+
+    private Vector3 fleetTargetPosition;
 
     // Start is called before the first frame update
     void Start()
     {
         if (this.tag == "Player") {
-            IsPlayerFleet = true;
+            isPlayerFleet = true;
         }
 
-        FleetTargetPosition = transform.position;
-
-        RotEase = EasingFunction.Ease.EaseInOutQuad;
-        RotEaseFunc = EasingFunction.GetEasingFunction(RotEase);
-
-        TransEase = EasingFunction.Ease.EaseInOutCubic;
-        TransEaseFunc = EasingFunction.GetEasingFunction(TransEase);
-
         foreach (Transform child in transform) {
-            FleetUnitShips.Add(child.gameObject);
+            fleetUnitShips.Add(child.gameObject);
+        }
+
+        fleetTargetPosition = transform.position;
+        foreach (GameObject ship in fleetUnitShips) {
+            ship.GetComponent<ShipTemplate>().TargetPosition = ship.transform.position;
+            ship.GetComponent<Rigidbody>().isKinematic = true;            
         }
     }
 
@@ -68,82 +44,75 @@ public class FleetUnit : MonoBehaviour
         CheckFleetStatus();
 
         // check if enemy in range
-        if (!inCombat) {
+        if (!inCombat && isPlayerFleet) {
             targetFleetUnitGO = CheckForEnemyFleet();
         }
 
         // target found, entering combat
         if (!inCombat && targetFleetUnitGO != null && targetFleetUnitGO.tag == "Hostile") {
+            print("entering combat");
             inCombat = true;
-            fleetTargetPosition = transform.position;
+            //fleetTargetPosition = transform.position;
+            transform.GetComponent<Rigidbody>().isKinematic = true;
             foreach (GameObject ship in fleetUnitShips) {
+                ship.GetComponent<Rigidbody>().isKinematic = false;
                 var combatPosition = GetPositionNearEnemy(ship, targetFleetUnitGO);
-                ship.GetComponent<ShipTemplate>().CombatTargetPosition = combatPosition;
+                ship.GetComponent<ShipTemplate>().TargetPosition = combatPosition;
             }
         }
         
         // target is dead, exiting combat
         if (targetFleetUnitGO == null && inCombat) {
-            print("out of combat?");
+            print("exiting combat");
+            transform.GetComponent<Rigidbody>().isKinematic = false;
+            foreach (GameObject ship in fleetUnitShips) {
+                ship.GetComponent<Rigidbody>().isKinematic = true;
+            }
             inCombat = false;
         }
 
         if (isPlayerFleet && !inCombat) {
+            print("out of combat stance");
             if (Mouse.current.rightButton.wasPressedThisFrame) {
-                TimeAtButtonDown = Time.fixedTime;
+                timeAtButtonDown = Time.fixedTime;
             }
             if (Mouse.current.rightButton.wasReleasedThisFrame) {
-                TimeAtButtonUp = Time.fixedTime;
+                timeAtButtonUp = Time.fixedTime;
             }
 
-            float buttonClickTime = TimeAtButtonUp - TimeAtButtonDown;
-            if (buttonClickTime > 0 && buttonClickTime < 0.25) {    
-                TimeAtButtonDown = 0;
-                TimeAtButtonUp = 0;
+            float buttonClickTime = timeAtButtonUp - timeAtButtonDown;
+            if (buttonClickTime > 0 && buttonClickTime < 0.25f) {    
+                timeAtButtonDown = 0;
+                timeAtButtonUp = 0;
 
-                RotTimeRunning = 0;
-                TransTimeRunning = 0;
-
-                FleetTargetPosition = GetTargetPosition();
-            }
-
-            if (Vector3.Distance(transform.position, FleetTargetPosition) > 0.1f) {
-                RotateToTarget(this.gameObject, FleetTargetPosition, timeToMaxTurnSpeed);
-                MoveToTarget(this.gameObject, FleetTargetPosition, timeToMaxAcceleration);
-            }
+                // (At some point) Will need to offset target position for each ship to maintain some sort of formation
+                fleetTargetPosition = GetTargetPosition();
+            }            
+            MoveAndRotateToTarget(this.gameObject, fleetTargetPosition);
         }
 
         if (isPlayerFleet && inCombat)
         {
+            print("in combat stance");
             foreach (GameObject ship in fleetUnitShips) {
-                //Debug.DrawLine (ship.transform.position, ship.transform.position + ship.GetComponent<ShipTemplate>().CombatTargetPosition * 10, Color.red, Mathf.Infinity);
-                if (Vector3.Distance(ship.transform.position, ship.GetComponent<ShipTemplate>().CombatTargetPosition) > 0.1f) {
-                    //print("move to combat pos dist: " + Vector3.Distance(ship.transform.position, ship.GetComponent<ShipTemplate>().CombatTargetPosition));
-                    RotateToTarget(ship, targetFleetUnitGO.transform.position, 15);
-                    MoveToTarget(ship, ship.GetComponent<ShipTemplate>().CombatTargetPosition, 18);
-                }
-                else {
+                if (Vector3.Distance(ship.transform.position, ship.GetComponent<ShipTemplate>().TargetPosition) < 1) {
                     ship.GetComponent<ShipTemplate>().DoDamage(targetFleetUnitGO.GetComponent<FleetUnit>());
-                    //SendDamage(TargetFleetUnitGO);                    
                 }
+                //ship.GetComponent<ShipTemplate>().TargetPosition = fleetTargetPosition;
+                MoveAndRotateToTarget(ship, ship.GetComponent<ShipTemplate>().TargetPosition);
             }
         }
     }
 
     private Vector3 GetPositionNearEnemy(GameObject shipToMove, GameObject targetFleet) {
         var targetDirection = (targetFleet.transform.position - shipToMove.transform.position).normalized;
-        var targetDist = Vector3.Distance(shipToMove.transform.position, targetFleet.transform.position);
-        
+        var targetDist = Vector3.Distance(shipToMove.transform.position, targetFleet.transform.position);        
         
         var travelDist = targetDist - shipToMove.GetComponent<ShipTemplate>().WeaponComponent.FiringRange;
         if (travelDist > 0) {
             targetDirection *= travelDist;
         }
         targetDirection += shipToMove.transform.position;
-        Debug.DrawLine (shipToMove.transform.position, targetDirection, Color.red, Mathf.Infinity);
-        //print("target vector" + targetDirection);
-        //GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        //sphere.transform.position = targetDirection;
 
         return targetDirection;
     }
@@ -151,45 +120,47 @@ public class FleetUnit : MonoBehaviour
     private void CheckFleetStatus() {
         List<GameObject> shipsToRemove = new List<GameObject>();
 
-        foreach (GameObject ship in FleetUnitShips) {
+        foreach (GameObject ship in fleetUnitShips) {
             if (!ship.GetComponent<ShipTemplate>().IsAlive) {
                 shipsToRemove.Add(ship);
             }
         }
 
         foreach (GameObject ship in shipsToRemove) {
-            FleetUnitShips.Remove(ship);
+            fleetUnitShips.Remove(ship);
             Destroy(ship);
         }
         
-        if (FleetUnitShips.Count == 0) {
+        if (fleetUnitShips.Count == 0) {
             Destroy(gameObject);
             print("fleet unit dead");
         }
     }
 
     public void ReceiveDamage(int damageSent, int shipToDamage) {
-        var ship = FleetUnitShips[shipToDamage].GetComponent<ShipTemplate>();
+        var ship = fleetUnitShips[shipToDamage].GetComponent<ShipTemplate>();
         if (ship.IsAlive) {
             ship.ProcessDamage(damageSent);
         }
     }
 
-    public void SendDamage(GameObject targetFleet) {    
+    /*public void SendDamage(GameObject targetFleet) {    
         foreach (GameObject ship in FleetUnitShips) {
             ship.GetComponent<ShipTemplate>().DoDamage(targetFleet.GetComponent<FleetUnit>());
         }    
-    }
+    }*/
 
     GameObject CheckForEnemyFleet() {        
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, FleetUnitShips[0].GetComponent<ShipTemplate>().SensorComponent.CurrentSensorResolution);
+        // using the first ship in the fleet for their sensor range... will need to change
+        Collider[] hitColliders = Physics.OverlapSphere(fleetUnitShips[0].transform.position, fleetUnitShips[0].GetComponent<ShipTemplate>().SensorComponent.CurrentSensorResolution);
         float distToFleet = 10000;
         GameObject targetFleetUnitGO = null;
         if (hitColliders.Length > 0) {
             foreach (Collider col in hitColliders) {
                 if (col.tag != "GalacticPlane" && col.tag != this.tag) {
-                    float d = Vector3.Distance(transform.position, col.transform.position);
+                    float d = Vector3.Distance(fleetUnitShips[0].transform.position, col.transform.position);
                     if (d < distToFleet) {
+                        print("found " + col.name);
                         distToFleet = d;
                         targetFleetUnitGO = col.gameObject;
                     }
@@ -211,26 +182,40 @@ public class FleetUnit : MonoBehaviour
         return hitPoint;
     }
 
-    void RotateToTarget(GameObject objToRotate, Vector3 target, int timeToMaxTurnSpeed) {        
-        var targetRotation = Quaternion.LookRotation(target - objToRotate.transform.position);
-        var rotationEase = 0f;
+    void MoveAndRotateToTarget(GameObject objToMove, Vector3 target) {
+        Rigidbody rb = objToMove.GetComponent<Rigidbody>();
+        //ShipTemplate shipTemplate = ship.GetComponent<ShipTemplate>();
 
-        if (RotTimeRunning < timeToMaxTurnSpeed) {    
-            rotationEase = RotEaseFunc(0, 1, RotTimeRunning / timeToMaxTurnSpeed);
-            RotTimeRunning += Time.deltaTime;
-        }
-
-        objToRotate.transform.rotation = Quaternion.Lerp(objToRotate.transform.rotation, targetRotation, rotationEase);
-    }
-
-    void MoveToTarget(GameObject objToMove, Vector3 target, int timeToMaxAcceleration) {
-        var translationEase = 0f;
+        var dist = Vector3.Distance(objToMove.transform.position, target);
+        var rot = objToMove.transform.InverseTransformPoint(target).x;   //AngleDir(ship.transform, shipTemplate.TargetPosition);
         
-        if (TransTimeRunning < timeToMaxAcceleration) {    
-            translationEase = TransEaseFunc(0, 1, TransTimeRunning / timeToMaxAcceleration);
-            TransTimeRunning += Time.deltaTime;
+        if (dist > stoppingDist) {
+            rb.AddRelativeForce(Vector3.forward * thrust);
+        }            
+        else if (dist < stoppingDist && rb.velocity.magnitude > 0) {
+            if (rb.velocity.magnitude <= 0.1f) {
+                rb.velocity = Vector3.zero;
+            }
+            else {
+                rb.velocity = rb.velocity * 0.99f;
+            }
         }
+        
+        if (rot < -1 || rot > 1) {
+            if (rot < 0)
+                rot = -1 * Mathf.Log(-1 * rot);
+            else
+                rot = Mathf.Log(rot);
 
-        objToMove.transform.position = Vector3.Lerp(objToMove.transform.position, target, translationEase);  //new Vector3(x, y, z);
+            rb.AddRelativeTorque(transform.up * rot * rotationSpeed);
+        }
+        else {
+            if (rb.angularVelocity.magnitude <= 0.1f) {
+                rb.angularVelocity = Vector3.zero;
+            }
+            else {
+                rb.angularVelocity = rb.angularVelocity * 0.5f;
+            }
+        }        
     }
 }
