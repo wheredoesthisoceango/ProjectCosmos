@@ -8,12 +8,10 @@ public class FleetUnit : MonoBehaviour
     private float timeAtButtonDown;
     private float timeAtButtonUp;
     private bool isPlayerFleet;
-    [SerializeField]
     private bool inCombat;
     private bool isAlive;
     private List<GameObject> fleetUnitShips = new List<GameObject>();
     private GameObject targetFleetUnitGO;
-
     public float thrust;
     public float rotationSpeed;
     public float stoppingDist;
@@ -44,26 +42,37 @@ public class FleetUnit : MonoBehaviour
         CheckFleetStatus();
 
         // check if enemy in range
-        if (!inCombat && isPlayerFleet) {
+        if (!inCombat) {
             targetFleetUnitGO = CheckForEnemyFleet();
         }
 
         // target found, entering combat
-        if (!inCombat && targetFleetUnitGO != null && targetFleetUnitGO.tag == "Hostile") {
-            print("entering combat");
+        if (targetFleetUnitGO != null) {
             inCombat = true;
-            //fleetTargetPosition = transform.position;
             transform.GetComponent<Rigidbody>().isKinematic = true;
             foreach (GameObject ship in fleetUnitShips) {
                 ship.GetComponent<Rigidbody>().isKinematic = false;
-                var combatPosition = GetPositionNearEnemy(ship, targetFleetUnitGO);
-                ship.GetComponent<ShipTemplate>().TargetPosition = combatPosition;
+
+                float dist = 10000;
+                GameObject closestEnemyShip = null;
+                foreach (GameObject enemyShip in targetFleetUnitGO.GetComponent<FleetUnit>().fleetUnitShips) {
+                    float newDist = Vector3.Distance(ship.transform.position, enemyShip.transform.position);
+                    if (newDist < dist) {
+                        dist = newDist;
+                        closestEnemyShip = enemyShip;
+                    }
+                }
+
+                var combatPosition = GetPositionNearEnemy(ship, closestEnemyShip);
+                MoveAndRotateToTarget(ship, combatPosition);
+                if (Vector3.Distance(ship.transform.position, combatPosition) < 10) {
+                    ship.GetComponent<ShipTemplate>().DoDamage(targetFleetUnitGO.GetComponent<FleetUnit>());
+                }
             }
         }
         
         // target is dead, exiting combat
         if (targetFleetUnitGO == null && inCombat) {
-            print("exiting combat");
             transform.GetComponent<Rigidbody>().isKinematic = false;
             foreach (GameObject ship in fleetUnitShips) {
                 ship.GetComponent<Rigidbody>().isKinematic = true;
@@ -71,42 +80,36 @@ public class FleetUnit : MonoBehaviour
             inCombat = false;
         }
 
+        // if player and out of combat, get player input
         if (isPlayerFleet && !inCombat) {
-            print("out of combat stance");
-            if (Mouse.current.rightButton.wasPressedThisFrame) {
-                timeAtButtonDown = Time.fixedTime;
-            }
-            if (Mouse.current.rightButton.wasReleasedThisFrame) {
-                timeAtButtonUp = Time.fixedTime;
-            }
-
-            float buttonClickTime = timeAtButtonUp - timeAtButtonDown;
-            if (buttonClickTime > 0 && buttonClickTime < 0.25f) {    
-                timeAtButtonDown = 0;
-                timeAtButtonUp = 0;
-
-                // (At some point) Will need to offset target position for each ship to maintain some sort of formation
-                fleetTargetPosition = GetTargetPosition();
-            }            
+            fleetTargetPosition = GetPlayerInput();
             MoveAndRotateToTarget(this.gameObject, fleetTargetPosition);
-        }
-
-        if (isPlayerFleet && inCombat)
-        {
-            print("in combat stance");
-            foreach (GameObject ship in fleetUnitShips) {
-                if (Vector3.Distance(ship.transform.position, ship.GetComponent<ShipTemplate>().TargetPosition) < 1) {
-                    ship.GetComponent<ShipTemplate>().DoDamage(targetFleetUnitGO.GetComponent<FleetUnit>());
-                }
-                //ship.GetComponent<ShipTemplate>().TargetPosition = fleetTargetPosition;
-                MoveAndRotateToTarget(ship, ship.GetComponent<ShipTemplate>().TargetPosition);
-            }
         }
     }
 
-    private Vector3 GetPositionNearEnemy(GameObject shipToMove, GameObject targetFleet) {
-        var targetDirection = (targetFleet.transform.position - shipToMove.transform.position).normalized;
-        var targetDist = Vector3.Distance(shipToMove.transform.position, targetFleet.transform.position);        
+    private Vector3 GetPlayerInput() {
+        Vector3 targetPos = fleetTargetPosition;
+
+        if (Mouse.current.rightButton.wasPressedThisFrame) {
+            timeAtButtonDown = Time.fixedTime;
+        }
+        if (Mouse.current.rightButton.wasReleasedThisFrame) {
+            timeAtButtonUp = Time.fixedTime;
+        }
+
+        float buttonClickTime = timeAtButtonUp - timeAtButtonDown;
+        if (buttonClickTime > 0 && buttonClickTime < 0.25f) {    
+            timeAtButtonDown = 0;
+            timeAtButtonUp = 0;
+
+            targetPos = GetTargetPosition();
+        }
+        return targetPos;      
+    }
+
+    private Vector3 GetPositionNearEnemy(GameObject shipToMove, GameObject targetShip) {
+        var targetDirection = (targetShip.transform.position - shipToMove.transform.position).normalized;
+        var targetDist = Vector3.Distance(shipToMove.transform.position, targetShip.transform.position);        
         
         var travelDist = targetDist - shipToMove.GetComponent<ShipTemplate>().WeaponComponent.FiringRange;
         if (travelDist > 0) {
@@ -160,7 +163,6 @@ public class FleetUnit : MonoBehaviour
                 if (col.tag != "GalacticPlane" && col.tag != this.tag) {
                     float d = Vector3.Distance(fleetUnitShips[0].transform.position, col.transform.position);
                     if (d < distToFleet) {
-                        print("found " + col.name);
                         distToFleet = d;
                         targetFleetUnitGO = col.gameObject;
                     }
@@ -184,10 +186,9 @@ public class FleetUnit : MonoBehaviour
 
     void MoveAndRotateToTarget(GameObject objToMove, Vector3 target) {
         Rigidbody rb = objToMove.GetComponent<Rigidbody>();
-        //ShipTemplate shipTemplate = ship.GetComponent<ShipTemplate>();
 
         var dist = Vector3.Distance(objToMove.transform.position, target);
-        var rot = objToMove.transform.InverseTransformPoint(target).x;   //AngleDir(ship.transform, shipTemplate.TargetPosition);
+        var rot = objToMove.transform.InverseTransformPoint(target).x;
         
         if (dist > stoppingDist) {
             rb.AddRelativeForce(Vector3.forward * thrust);

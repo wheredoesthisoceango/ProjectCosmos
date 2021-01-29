@@ -54,7 +54,7 @@ public class ShipTemplate : MonoBehaviour
 
         remainingDamage = Mathf.Max(0, -1 * fieldValAfterDamage);
         fieldComponent.CurrentFieldStrength = fieldValAfterDamage > 0 ? fieldValAfterDamage : 0;
-        print("oof I took " + incomingDamage + " field damage, fields at " + fieldValAfterDamage);
+        print("oof " + transform.name + " took " + incomingDamage + " field damage, fields at " + fieldValAfterDamage);
 
         return remainingDamage;
     }
