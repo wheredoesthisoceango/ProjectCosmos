@@ -26,7 +26,8 @@ public class FleetUnit : MonoBehaviour
         }
 
         foreach (Transform child in transform) {
-            fleetUnitShips.Add(child.gameObject);
+            if (child.tag == "Ship")
+                fleetUnitShips.Add(child.gameObject);
         }
 
         fleetTargetPosition = transform.position;
@@ -160,7 +161,7 @@ public class FleetUnit : MonoBehaviour
         GameObject targetFleetUnitGO = null;
         if (hitColliders.Length > 0) {
             foreach (Collider col in hitColliders) {
-                if (col.tag != "GalacticPlane" && col.tag != this.tag) {
+                if (col.tag != "GalacticPlane" && col.tag != this.tag && col.tag != "Ship") {
                     float d = Vector3.Distance(fleetUnitShips[0].transform.position, col.transform.position);
                     if (d < distToFleet) {
                         distToFleet = d;

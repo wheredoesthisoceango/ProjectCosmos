@@ -8,6 +8,7 @@ TagManager:
   - Neutral
   - Hostile
   - GalacticPlane
+  - Ship
   layers:
   - Default
   - TransparentFX
