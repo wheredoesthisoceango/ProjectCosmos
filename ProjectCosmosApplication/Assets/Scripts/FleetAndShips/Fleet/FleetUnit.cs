@@ -15,6 +15,7 @@ public class FleetUnit : MonoBehaviour
     public float thrust;
     public float rotationSpeed;
     public float stoppingDist;
+    public bool isFleetSelected;
 
     private Vector3 fleetTargetPosition;
 
@@ -82,7 +83,7 @@ public class FleetUnit : MonoBehaviour
         }
 
         // if player and out of combat, get player input
-        if (isPlayerFleet && !inCombat) {
+        if (isPlayerFleet && isFleetSelected && !inCombat) {
             fleetTargetPosition = GetPlayerInput();
             MoveAndRotateToTarget(this.gameObject, fleetTargetPosition);
         }

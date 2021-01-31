@@ -66,7 +66,14 @@ public class GalaxySelector : MonoBehaviour
         if (hitColliders.Length > 0) {
             foreach (Collider col in hitColliders) {
                 if (col.tag == "Player" || col.tag == "Hostile") {
-                    print("setup " + col.name);
+                    Transform fleet = col.transform;
+                    foreach (Transform child in fleet) {
+                        if (child.GetComponent<Canvas>() != null) {
+                            //print("setup " + child.name);
+                            child.GetComponent<Canvas>().enabled = true;
+                            child.GetComponent<FleetCanvasManager>().SetupIcon();
+                        }
+                    }
                 }
             }
         }
