@@ -1,0 +1,29 @@
+Notes from Stellaris
+- Spread and layer ships out along the y dimension in combat
+- Small ships should stay moving in combat, circling their target
+- Fleet icon floats in the general center of all ships in the fleet
+- Ships in combat fly in S shape through the battlefield, reach the end, then make a U turn
+- After combat, ships in a fleet come together again - but not into formation! They just hang around in the same space, facing different directions
+- When a fleet spawn into a system, the ship arrive in some formation
+- Fleet ships seem to have some position within the fleet and when out of combat try to get to their position in the fleet
+- Small ships in combat with a stationary target will circle it
+- Destroyers in front of corvettes?
+- The center of the the Fleet moves to the user selected target
+- Star system objects seem to always exist, even in galaxy view, but ships/fleets are spawned in when the star system they are in is brought up
+- Planets rotate but don't orbit their star
+
+Likes
+- Very fast switching between Galaxy and Star system view
+- Both close and distant zooms provide useful views
+- Exploration and surveying systems is easy
+- Anomalies provide a nice mini-story system and a time tradeoff between exploration and researching discovered anomalies
+
+Dislikes
+- Very little emotional connection to own civ or other civs
+- Too much complexity for ship components (esp. weapons), but the meta ends up being very simple even with all that complexity
+- At times very little to do but wait
+- Game leans on procedural map and civ generation but every 'run' ends up being very similar
+- Some buildings could/should? be built on each planet, so build order for colonies very similar which ends up feeling boring since its the same pattern (little chance for player to make decisions)
+- slowww travel, large empires feel sluggish responding to threats
+- Annoying to chase after fleet
+- Game just peters out near the end, repeating research that gives +%, megastructures that are mostly useless

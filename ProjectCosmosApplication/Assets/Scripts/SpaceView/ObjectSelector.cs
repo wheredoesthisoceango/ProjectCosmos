@@ -30,7 +30,7 @@ public class ObjectSelector : MonoBehaviour
             PointerEventData pointerData = new PointerEventData(EventSystem.current);
             List<RaycastResult> results = new List<RaycastResult>();
 
-            //Raycast using the Graphics Raycaster and mouse click position
+            //Raycast using the Physics Raycaster and mouse click position
             pointerData.position = Mouse.current.position.ReadValue();
             raycaster.Raycast(pointerData, results);
 
@@ -40,7 +40,8 @@ public class ObjectSelector : MonoBehaviour
                 //Debug.Log(result.gameObject.tag + " selected");
                 if (result.gameObject.tag == "Ship") {
                     fleetUnitSelected = result.gameObject.transform.root;
-                    fleetUnitSelected.BroadcastMessage("FleetSelected", true);
+                    //Debug.Log(fleetUnitSelected + " selected");
+                    fleetUnitSelected.gameObject.BroadcastMessage("FleetSelected", true);
                 }
             }
 

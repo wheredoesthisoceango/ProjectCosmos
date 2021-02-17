@@ -5,19 +5,17 @@ using UnityEngine;
 public class SolarObjectSpawner : MonoBehaviour
 {
     public GameObject[] planets;
-    public GameObject sun;
 
     // Start is called before the first frame update
     void Start()
     {
         foreach (GameObject planet in planets) {
             DrawCircle orbitDistance = planet.GetComponent<DrawCircle>();
-            Vector3 sunPos = sun.transform.position;
+            Vector3 sunPos = transform.position;
             sunPos.z += orbitDistance.orbitRadius;
             GameObject newPlanet = Instantiate(planet, sunPos, Quaternion.identity);
-            newPlanet.transform.RotateAround(sun.transform.position, Vector3.up, RandFloat());
-            newPlanet.GetComponent<Orbit>().target = sun;
-            newPlanet.GetComponent<DrawCircle>().orbitTarget = sun.transform;
+            newPlanet.transform.RotateAround(transform.position, Vector3.up, RandFloat());
+            newPlanet.GetComponent<DrawCircle>().orbitTarget = transform;
         }        
     }
 

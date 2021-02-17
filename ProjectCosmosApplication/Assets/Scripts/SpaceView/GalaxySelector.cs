@@ -10,7 +10,7 @@ public class GalaxySelector : MonoBehaviour
     public GameObject galaxySystem;
     public List<GameObject> starSystems = new List<GameObject>();
     private Vector3 target;
-    private bool systemSelected = true;
+    private bool systemSelected = false;
     private float x;
     private float y;
     private float z;
@@ -27,9 +27,6 @@ public class GalaxySelector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {        
-        //var mouse = Mouse.current;
-        //Vector3 mousePos = mouse.position.ReadValue();
-
         if (Keyboard.current.fKey.wasPressedThisFrame) {
             systemSelected = true;
             target = galaxySystem.transform.position;
@@ -44,8 +41,6 @@ public class GalaxySelector : MonoBehaviour
         }
 
         if (systemSelected && Vector3.Distance(target, camFocus.transform.position) > 0.1) {
-            mainCam.GetComponent<Camera_SimpleController>().enabled = false;
-
             var positionLerpPct = 1f - Mathf.Exp((Mathf.Log(1f - 0.99f) / 0.2f) * Time.deltaTime);
 
             x = Mathf.Lerp(x, target.x, positionLerpPct);
@@ -56,7 +51,6 @@ public class GalaxySelector : MonoBehaviour
         }
         else if (systemSelected) {
             systemSelected = false;
-            mainCam.GetComponent<Camera_SimpleController>().enabled = true;
             SetupNewSystem();
         }
     }
@@ -69,7 +63,6 @@ public class GalaxySelector : MonoBehaviour
                     Transform fleet = col.transform;
                     foreach (Transform child in fleet) {
                         if (child.GetComponent<Canvas>() != null) {
-                            //print("setup " + child.name);
                             child.GetComponent<Canvas>().enabled = true;
                             child.GetComponent<FleetCanvasManager>().SetupIcon();
                         }

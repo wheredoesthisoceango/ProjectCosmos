@@ -1,0 +1,29 @@
+Notes on Endless Space 2
+
+Likes 
+- gorgeous minimalist UI, responsive, sleek transitions
+- really nice looking ship designer UI
+- Cool civ intro
+- Unique civs alien appearances
+- Cool way to introduce new planets from a newly explored system
+- Cool probe animation shot at anomalies on planets
+- Suggested research is nice for new players overwhelmed by options
+
+Dislikes
+- Only two zoom settings on research tree, zoomed out with some information, or zoomed all the way in with all information but only for a few techs
+- Annoying the game doesn't notify player of idle ships
+- Diplomacy screen with all civs somewhat difficult to navigate and quickly read
+- Combat just seems to boil down to bigger numbers (stack of doom from civ 4)
+- Confusing conflict setup, civs first contact start at cold war, have to negotiate peace or can declare all out war (still confusing, but it does make some sense, dark forest theory)
+- Hacking doesn't seem impactful enough and seems to constantly pop up (maybe not true, took down neighbouring civ with spawning pirates from hacks)
+- Travel takes too long... (was an issue for the starting civ, sci-civ has faster starting ships)
+- Economy seems weird - no buildings make money, only way is to sell on market? But then no auto selling so have to manually manage
+- Seems to stagnate once initial settler rush ends, only war after? (playing on big map extends settler/exploration phase)
+- No idea what the victory conditions are or what I'm playing for - to what end (other than the obvious kill everyone else)
+- Pirates very frustrating - like they were aiming for barb camps from Civ but way more effort to take out (don't need to take them out, just need to sit on them with some ships to prevent their ship from going anywhere)
+- Tech tree confusing to new players, hard to tell what upgrades/new techs will provide, all items have the same circle with different colours (unlocks a new ship, building, passive upgrade, army, etc)
+- Why are ship hull designs for combat in the empire development tree, not the military tree? 
+- No idea how to tell who is in lead to win game, or any ranking other than points
+- Story quests feel disjointed and in the way of the 4x gameplay, quests pushing the player along arbitary lines they wouldn't otherwise want to develop
+- Fixed storylines conflict with the procedurally generated maps feel awkward
+- Tech tree(s?) either too large, or the player isn't supposed to research everything - unclear
